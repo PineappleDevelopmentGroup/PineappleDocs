@@ -60,6 +60,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs', 
+      {
+        id: 'pineapple-lib',
+        path: 'pineapple-lib',
+        routeBasePath: 'pineapple-lib',
+        sidebarPath: require.resolve('./pineapplesidebar.js'),
+        lastVersion: "1.0.0"
+      }
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
