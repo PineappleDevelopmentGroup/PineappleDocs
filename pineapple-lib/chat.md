@@ -105,7 +105,7 @@ Don't you hate having to write different colors. Personally I prefer to make my 
 <gradient:#FFF000:#000FFF>Now I got some fancy text and guess what! I didn't even lift a finger. Okay that's a lie I did, but It was to type the tag!
 ```
 
-![A Picture of the translated text above](img/chat/gradient_color-showcase.png)
+![A Picture of the translated text above](img/chat/gradient_color_showcase.png)
 
 ### Color Overview
 
