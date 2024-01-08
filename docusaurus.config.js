@@ -5,6 +5,22 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
+
+const remarkPluginsConfig = {
+  remarkPlugins: [
+    [
+      tabBlocks, 
+      {
+        labels: [
+          ["java", "Java"],
+          ["kts", "Kotlin"],
+          ["kotlin", "Kotlin"]
+        ]
+      }
+    ]
+  ]
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -45,6 +61,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          ...remarkPluginsConfig
         },
         blog: {
           showReadingTime: true,
@@ -56,6 +73,9 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        pages: {
+          ...remarkPluginsConfig
+        }
       }),
     ],
   ],
@@ -67,10 +87,10 @@ const config = {
         id: 'pineapple-lib',
         path: 'pineapple-lib',
         routeBasePath: 'pineapple-lib',
-        sidebarPath: require.resolve('./pineapplesidebar.js'),
-        lastVersion: "1.0.0"
+        sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
+        ...remarkPluginsConfig
       }
-    ]
+    ],
   ],
 
   themeConfig:
@@ -78,6 +98,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      docs: {
+        sidebar: {
+          hideable: true
+        },
+      },
       navbar: {
         title: 'My Site',
         logo: {
@@ -91,12 +116,18 @@ const config = {
             position: 'left',
             label: 'Libraries',
           },
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+            docsPluginId: 'pineapple-lib',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
           },
+
         ],
       },
       footer: {
@@ -146,7 +177,14 @@ const config = {
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        darkTheme: prismThemes.vsDark,
+        additionalLanguages: [
+          'java',
+          'kotlin',
+          'groovy',
+          'json',
+          'yaml',
+        ],
       },
     }),
 };
