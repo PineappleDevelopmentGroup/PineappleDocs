@@ -187,7 +187,13 @@ public class PlayerData {
 The StringAdapter
 
 ```java title="PlayerDataAdapter.java"
-public class PlayerDataAdapter implements StringAdapter<PlayerData>{
+public class PlayerDataAdapter implements GenericStringAdapter<PlayerData> {
+
+  @Override
+  public Class<PlayerData> getRuntimeType() {
+    return PlayerData.class;
+  }
+
   @Override
   public String toString(PlayerData data) {
     return data.toString();
@@ -197,6 +203,89 @@ public class PlayerDataAdapter implements StringAdapter<PlayerData>{
   public PlayerData fromString(String value) {
     String[] split = value.split(";");
     return new PlayerData(split[0], Integer.parseInt(split[1]));
+  }
+}
+```
+
+How it would look like used in a config:
+
+```java title="PluginSettings.java"
+public class PluginSettings {
+
+  @ConfigEntry("owner-data")
+  public static PlayerData OWNER_DATA = new PlayerData(UUID.randomUUID(), 20);
+
+}
+```
+
+How to register the adapter:
+
+```java
+private void registerAdapter() {
+  PineappleLib.getConfigurationManager().registerTypeAdapter(PlayerData.class, new PlayerDataAdapter());
+}
+```
+
+### Complex Adapter
+
+The PlayerData class to serialize
+
+```java title="PlayerData.java"
+public class PlayerData {
+
+  private final UUID uuid;
+  private int kills = 0;
+
+  public PlayerData(UUID uuid, int kills) {
+    this.uuid = uuid;
+    this.kills = kills;
+  }
+
+  public UUID getUUID() {
+    return this.uuid;
+  }
+
+  public int getKills() {
+    return this.kills;
+  }
+}
+```
+
+The StringAdapter
+
+```java title="PlayerDataAdapter.java"
+public class PlayerDataAdapter implements TypeAdapter<Map<String, Object>, PlayerData> {
+
+  @Override
+  public Class<Map<String, Object>> getSavedType() {
+      return (Class<Map<String, Object>>) (Object) Map.class;
+  }
+   
+  @Override
+  public Class<WeightedRandom<R>> getRuntimeType() {
+      return (Class<WeightedRandom<R>>) (Object) WeightedRandom.class;
+  }
+
+  @Override
+  public PlayerData read(Map<String, Object> value) {
+    return new PlayerData(UUID.fromString(value.get("uuid").toString()), (Integer) value.get("kills"));
+  }
+
+  @Override
+  public Map<String, Object> write(PlayerData value, Map<String, Object> existing, boolean replace) {
+    if (existing == null) {
+      existing = new HashMap<>();
+    }
+
+    if (!existing.containsKey("uuid") || replace) {
+      existing.put("uuid", value.getUUID().toString());
+    }
+
+    if (!existing.containsKey("kills") || replace) {
+      existing.put("kills", value.getKills());
+    }
+      
+    return existing;
   }
 }
 ```
