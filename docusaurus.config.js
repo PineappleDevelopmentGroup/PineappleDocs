@@ -60,15 +60,11 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master',
           ...remarkPluginsConfig
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -88,6 +84,7 @@ const config = {
         path: 'pineapple-lib',
         routeBasePath: 'pineapple-lib',
         sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
+        editUrl: "https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master",
         ...remarkPluginsConfig
       }
     ],
