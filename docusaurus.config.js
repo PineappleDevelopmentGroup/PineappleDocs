@@ -25,8 +25,8 @@ const remarkPluginsConfig = {
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'PineappleDevelopment',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  tagline: 'Sweet',
+  favicon: 'img/pineapplefavicon.ico',
 
   // Set the production url of your site here
   url: 'https://docs.miles.sh/',
@@ -104,9 +104,9 @@ const config = {
         },
       },
       navbar: {
-        title: 'My Site',
+        title: 'Pineapple Development',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Pineapple Development Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -137,7 +137,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'PineappleLib',
                 to: '/docs/libraries',
               },
             ],
@@ -146,16 +146,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://discordapp.com/invite/NXW2FuQ6a5',
               },
             ],
           },
@@ -168,12 +160,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/PineappleDevelopmentGroup/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} PineappleDevelopmentGroup, Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
