@@ -5,7 +5,7 @@ sidebar_position: 3
 # Config
 
 :::note
-Make sure you have initalized pineapple before trying to create configs
+You need to initialize PineappleLib with `PineappleLib.initialize(Plugin)` before you can use this API
 :::
 
 ## Annotations

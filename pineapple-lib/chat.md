@@ -5,7 +5,7 @@ sidebar_position: 2
 # Chat
 
 :::note
-You do not need to initialize Pineapple use Pineapple Chat and any code involving Pineapple Chat can be run prior to initialization
+You **do not** need to initialize PineappleLib with `PineappleLib.initialize(Plugin)` before you can use this API
 :::
 
 The Pineapple Chat syntax is heavily inspired by [MiniMessage](https://github.com/KyoriPowered/adventure-text-minimessage). It however, is important to remember this is strictly **inspiration** and there are deviations between MiniMessage and PineappleChat.
