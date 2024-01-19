@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Config
@@ -262,8 +262,8 @@ public class PlayerDataAdapter implements TypeAdapter<Map<String, Object>, Playe
   }
    
   @Override
-  public Class<WeightedRandom<R>> getRuntimeType() {
-      return (Class<WeightedRandom<R>>) (Object) WeightedRandom.class;
+  public Class<PlayerData> getRuntimeType() {
+      return PlayerData.class;
   }
 
   @Override
