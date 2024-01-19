@@ -1,8 +1,12 @@
 ---
-sidebar_position: 7
+sidebar_position: 9
 ---
 
 # UpdateChecker
+
+:::note
+You **do not** need to initialize PineappleLib with `PineappleLib.initialize(Plugin)` before you can use this API
+:::
 
 PineappleLib provides an update checker to allow for you to notify users of an available update
 
