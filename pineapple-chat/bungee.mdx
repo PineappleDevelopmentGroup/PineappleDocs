@@ -1,0 +1,134 @@
+---
+sidebar_position: 3
+title: Bungeechat Platform
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Bungeechat Platform Adapter
+
+The Bungeechat Platform Adapter exhibits what PineappleChat is capable of and is highly reccomended over the minecraft legacy module
+
+## Adding Bungeechat Platform Adapter Dependency
+
+```xml tab={"label":"Maven"}
+<dependencies>
+    <dependency>
+      <groupId>sh.miles</groupId>
+      <artifactId>pineapplechat-bungee</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+</dependencies>
+```
+
+```groovy tab={"label":"Gradle (Groovy)"}
+dependencies {
+    implementation("sh.miles:pineapplechat-bungee:1.0.0-SNAPSHOT")
+}
+```
+
+```kotlin tab={"label":"Gradle (Kotlin)"}
+dependencies {
+    implementation("sh.miles:pineapplechat-bungee:1.0.0-SNAPSHOT")
+}
+```
+
+## Use
+
+To use PineappleChat you must initialize the parser context
+
+```java
+final BungeePineappleParserContext parser = new BungeePineappleParserContext();
+```
+
+## Platform Specific Tags
+
+Bungeechat is capable enough to offer more options to those who are looking to spice up their text. Tag tags below are added by the Bungeechat platform for use.
+
+### Hover Tag
+
+The hover tag allows things to be seen when you hover over a piece of text! The tag is formatted like so `<hover:_action_:_action-content_>`.
+
+Each action has different behaviors and arguments so depending onthe action different content is required. Below I will go into the specifics of each action
+
+<Tabs>
+<TabItem value="show_text" label="Show Text" default>
+Shows text when hovered on
+
+requires 1 argument which is text
+
+`<hover:show_text:'_text_'>`
+
+The given text **MUST** be wrapped in quotes
+</TabItem>
+<TabItem value="show_item" label="Show Item">
+Shows an item when hovered on
+
+Requires Atleast 2 arguments
+item id, item amount
+`<hover:show_item:'minecraft:_item_':_amount_>`
+
+1 optional argument which contains other NBT
+
+`<hover:show_item:'minecraft:_item_':_amount_:'_nbt_'>`
+All arguments wrapped in quotes **MUST** be wrapped in quotes
+</TabItem>
+<TabItem value="show_entity" label="Show Entity">
+Shows an entity's details when hovered on
+
+Requires Atleast 2 arguments
+entity id, entity uuid
+
+`<hover:show_entity:'minecraft:_id_':'_uuid_'>`
+
+1 optional argument which includes the Entity's name
+
+`<hover:show_entity:'minecraft:_id_':'_uuid_':'_text_'>`
+
+All arguments wrapped in quotes **MUST** be wrapped in quotes
+</TabItem>
+</Tabs>
+
+:::info
+All text arguments are run through the parser, even if nested in another tag, so you can be context aware with both replacements and use PineappleChat's other features
+:::
+
+
+### Click Tag
+
+The click tag allows things to happen when a piece of text is clicked on. This can be combined very well with the hover tag to allow for immersive text interaction. 
+Unlike HoverEvent's all ClickEvent's have exactly one parameter of text so it is very easy to switch between actions without changing much
+
+<Tabs>
+<TabItem value="open_url" label="Open a URL">
+Prompts a URL Open
+
+`<click:open_url:'_text_'>`
+</TabItem>
+<TabItem value="run_command" label="Run a Command">
+Runs a command when clicked
+
+`<click:run_command:'_text_'>`
+</TabItem>
+<TabItem value="suggest_command" label="Suggest a Command">
+Suggests a command when clicked
+
+`<click:suggest_command:'_text_'>`
+</TabItem>
+<TabItem value="change_page" label="Change The Current Boook Page">
+Changes the page of the currently opened book to another page
+
+`<click:change_page:'_text_'>`
+</TabItem>
+<TabItem value="copy_to_clipbaord" label="Copy To Clipboard">
+Copies the given entry to the player's clipboard
+
+`<click:copy_to_clipbaord:'_text_'>`
+</TabItem>
+</Tabs>
+
+:::warning
+The quotations around the `_text_` are **NOT** optional and are required for the tag to parse properly
+:::

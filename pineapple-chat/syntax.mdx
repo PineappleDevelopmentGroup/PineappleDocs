@@ -1,0 +1,81 @@
+---
+sidebar_position: 2
+title: Language Syntax
+---
+
+# Getting Started With the Syntax
+
+PineappleChat is a simple markup language currently exclusive to minecraft text.
+
+## The Premise
+
+PineappleChat allows for decleration of tags within strings. These tags can be parsed into different outputs depending on the platform!
+
+Here is an example of a basic string with some tags
+
+```md
+Hello the text is now <red>red</red> or maybe it's <blue>blue</blue>
+```
+
+In the example above you can see two types of tags the opening tag `<red>` and closing tag `</red>` closing tags can be destinguished
+from opening tags because they are lead by a `/` where as opening tags are not.
+
+If you want to include tag literals in your string it is still easy to do so, with PineappleChat escaping tags is easy to do
+
+```md
+The PineappleChat tag red can be created by typing \<red>
+```
+
+The result of the tag above when run through a parse leaves the `<red>` in the string once parsed
+
+## Tags
+
+PineappleChat composes its parts into tags. Some platforms may have specific tags that are only avaliable on that platform, but this page will go over every tag avaliable to every module.
+While PineappleChat does provide many defaults, it is also possible some platforms may not beable to fulfill their requirements notably the minecraft-legacy module falls shorts with many basic features.
+
+### Color Tag
+
+The Color Tag can be represented like `<color:_color_>`. Not every color tag must be prefixed with `color:`. Named Colors can simply be input into an empty tag shell like `<_color>`.
+
+:::info
+Named Colors are simply a construct made by mojang. They are less prevelent outside of the legacy module, however they can still be leveraged. You can find a list of named colors [here](https://minecraft.wiki/w/Formatting_codes)
+:::
+
+### Decoration Tag
+
+Decorations are some modifiers that can be put on text they can be represented like `<decor:_decoration_>`. However, unlike colors every decor can simply be expressed like `<_decoration_>`.
+
+:::info
+Decorations are also a construct made by mojang. You can find a list of decorations [here](https://minecraft.wiki/w/Formatting_codes)
+:::
+
+### Complex Tags
+
+Complex Tags are a family of tags that are parsed in a different way than other tags. Some examples of the complex tags are gradient tags. There are 2 types of complex tags by default IteratingTag which applies over every character in a set of text. There also exists LazyTags which insert text a later determined time. LazyTags however, can not be used in conjunction with IteratingTags. These two types are inherently incompatable because LazyTags apply an unknown sized piece of text that can be properly iterated over.
+
+<details>
+<summary>More Complex Tags</summary>
+#### Gradient Tag
+
+Can be created using `<gradient:_color1_:_color2>`
+
+#### Keybind Tag
+
+Can be created using `<keybind:_key_>`
+
+#### Language Tag
+
+Can be created using `<lang:_key_>`
+
+#### Score Tag
+
+Can be created using `<score:_scoreboard-name_:_object-name_>`
+
+#### Selector Tag
+
+Can be created using `<selector:_selector_>`
+</details>
+
+:::warning
+Some complex tags do NOT work on some modules. You can find more information about which complex tags are supported in the respective modules
+:::
