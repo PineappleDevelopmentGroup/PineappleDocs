@@ -86,7 +86,18 @@ const config = {
         sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
         editUrl: "https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master",
         ...remarkPluginsConfig
-      }
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs', 
+      {
+        id: 'pineapple-chat',
+        path: 'pineapple-chat',
+        routeBasePath: 'pineapple-chat',
+        sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
+        editUrl: "https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master",
+        ...remarkPluginsConfig
+      },
     ],
   ],
 
