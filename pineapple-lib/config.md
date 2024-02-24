@@ -20,7 +20,7 @@ Example:
 #### Parent Section
 
 ```java
-@Config("foo")
+@ConfigPath("foo")
 public static String bar = "foobar";
 ```
 
@@ -33,7 +33,7 @@ foo: "foobar"
 #### Sub Section
 
 ```java
-@ConfigEntry("foo.bar")
+@ConfigPath("foo.bar")
 public static String bar = "foobar";
 ```
 
@@ -88,7 +88,7 @@ All configs inside of Pineapple are reloadable you just have to retain an instan
 ```java title="PluginSettings.java"
 public class PluginSettings {
   
-  @ConfigEntry("foo")
+  @ConfigPath("foo")
   public static String BAR = "foobar"
 
 }
@@ -168,7 +168,7 @@ How it would look like used in a config:
 ```java title="PluginSettings.java"
 public class PluginSettings {
 
-  @ConfigEntry("owner-data")
+  @ConfigPath("owner-data")
   public static PlayerData OWNER_DATA = new PlayerData(UUID.randomUUID(), 20);
 
 }
@@ -251,7 +251,7 @@ How it would look like used in a config:
 ```java title="PluginSettings.java"
 public class PluginSettings {
 
-  @ConfigEntry("owner-data")
+  @ConfigPath("owner-data")
   public static PlayerData OWNER_DATA = new PlayerData(UUID.randomUUID(), 20);
 
 }
