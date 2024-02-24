@@ -99,6 +99,17 @@ const config = {
         ...remarkPluginsConfig
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs', 
+      {
+        id: 'pineapple-plugins',
+        path: 'pineapple-plugins',
+        routeBasePath: 'pineapple-plugins',
+        sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
+        editUrl: "https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master",
+        ...remarkPluginsConfig
+      },
+    ],
   ],
 
   themeConfig:
@@ -129,6 +140,13 @@ const config = {
             type: "docsVersionDropdown",
             position: "right",
             docsPluginId: 'pineapple-lib',
+          },
+          {
+            type: 'doc',
+            position: 'left',
+            docId: 'index',
+            docsPluginId: 'pineapple-plugins',
+            label: 'Plugins',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
