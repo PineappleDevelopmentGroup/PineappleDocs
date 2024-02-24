@@ -120,9 +120,10 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'libraries/index',
             position: 'left',
-            label: 'Libraries',
+            docId: 'index',
+            docsPluginId: 'pineapple-lib',
+            label: 'Pineapple Lib',
           },
           {
             type: "docsVersionDropdown",
