@@ -148,6 +148,13 @@ const config = {
             label: 'Pineapple Lib',
           },
           {
+            type: 'doc',
+            position: 'left',
+            docId: 'index',
+            docsPluginId: 'pineapple-chat',
+            label: 'Pineapple Chat',
+          },
+          {
             type: "docsVersionDropdown",
             position: "right",
             docsPluginId: 'pineapple-lib',
