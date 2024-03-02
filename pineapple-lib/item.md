@@ -9,7 +9,7 @@ PineappleLib includes an item builder to make creating items much easier, this i
 # Creating a builder
 
 Our item builder allows for multiple ways to create an item, This includes static of methods, of(Material) and of(Material, int). \
-We also allow for you to create an ItemBuilder of an already existing stack, this is accesse with the static modifyStack(ItemStack) & modifyStackClone(Stack) which will clone the stack then modify. \
+We also allow for you to create an ItemBuilder of an already existing stack, this is access with the static modifyStack(ItemStack) & modifyStackClone(Stack) which will clone the stack then modify. \
 Example:
 
 ```java

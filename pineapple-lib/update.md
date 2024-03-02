@@ -13,7 +13,7 @@ PineappleLib provides an update checker to allow for you to notify users of an a
 ## Usage
 
 ```java
-private void initalizeUpdateChecker() {
+private void initializeUpdateChecker() {
     UpdateChecker checker = new UpdateChecker(this, 12345);
     SimpleSemVersion current = SimpleSemVersion.fromString(this.getDescription().getVersion());
     checker.getVersion(spigot -> {

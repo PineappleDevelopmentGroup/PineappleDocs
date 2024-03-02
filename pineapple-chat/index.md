@@ -6,7 +6,7 @@ title: Getting Started
 
 Welcome to PineappleChat, this wiki will explain how to add it and all of its features for you to add to your spigot plugins  
 
-## Chosing Your Module
+## Choosing Your Module
 
 Before you chose your module you should think about what you need. PineappleChat provides multiple modules to cater for the needs of your platform.
 If you don't see something compatible with your platform feel free to make a issue or pull request your platform on our
@@ -14,8 +14,8 @@ If you don't see something compatible with your platform feel free to make a iss
 
 ### Currently Supported Modules
 
-- Bungee: (The BungeeComponent Family), used mainly on spigot, and bungeecord. **(Reccomended)**
-- Minecraft Legacy: Can be used by any minecraft platform. **(Not Reccomended)**
+- Bungee: (The BungeeComponent Family), used mainly on spigot, and Bungeecord. **(Recommended)**
+- Minecraft Legacy: Can be used by any minecraft platform. **(Not Recommended)**
 
 ## Adding the repo
 

@@ -9,25 +9,51 @@ This guide will go over how to configure Totem and all of the options that you h
 
 ## Commands
 
-`/totem` 
-permission -> `totem.command` 
-description -> The base totem command.
-`/totem give <totem-item>` 
-permission -> `totem.command.give` 
-description -> gives the user a totem.
-`/pineapple-totem` 
-permission -> `pineapple-lib.command` 
-description -> My libraries internal commands for when things go wrong.
-`/pineapple-totem debug` 
-permission -> `pineapple-lib.command.debug` 
-description -> provides subcommands with debug information that could be useful.
-`/pineapple-totem debug version` 
-perimssion -> `pineapple-lib.command.debug.version` 
-description -> provides version information for debugging purposes
+<details>
+<summary>/totem</summary>
+### Summary
+The base totem command
+### Permission
+totem.command
+</details>
+<details>
+<summary>/totem give \<totem-item\></summary>
+### Summary
+Gives you a totem-item of the specified type
+### Arguments
+\<totem-item\>: The id for the totem item you want to be given
+### Permission
+totem.command.give
+</details>
+<details>
+<summary>/pineapple-totem</summary>
+### Summary
+My libraries internal commands for when things go wrong.
+### Permission
+pineapple-lib.command
+</details>
+<details>
+<summary>/pineapple-totem debug</summary>
+### Summary
+provides subcommands with debug information that could be useful for debugging.
+### Permission
+pineapple-lib.command.debug
+</details>
+<details>
+<summary>/pineapple-totem debug version</summary>
+### Summary
+provides version information for debugging purposes
+### Permission
+pineapple-lib.command.debug.version
+</details>
 
 ## Configuration
 
-Unlike most other plugins totem does a lot of its configuration in JSON. Json stands for JavaScript Object Notation. Writing JSON is an easier alternative that leaves you with clear linting when things go wrong. However, most generic text editors may not notify you of these errors. To ensure your JSON is valid before starting your server you can use [JsonLint](https://jsonlint.com/) which will tell you if your JSON has any errors. Alternatively you can use VSCode, Brackets, Sublime and even Notepad++ can allow for seemless JSON editing.
+Unlike most other plugins totem does a lot of its configuration in JSON. Json stands for JavaScript Object Notation. 
+Writing JSON is an easier alternative that leaves you with clear linting when things go wrong. 
+However, most generic text editors may not notify you of these errors. 
+To ensure your JSON is valid before starting your server you can use [JsonLint](https://jsonlint.com/) which will tell you if your JSON has any errors. 
+Alternatively you can use VSCode, Brackets, Sublime and even Notepad++ can allow for seamless JSON editing.
 
 ## Totem Settings | totem-settings.json
 
@@ -61,7 +87,7 @@ Every totem has an ID. ID allows my plugin to identify the difference between di
 
 ### Damage Types
 
-Damage types are minecrafts internal way of knowing what type of damage was inflicted upon an entity. You can see a full list of these on the [Minecraft Wiki](https://minecraft.wiki/w/Damage_types). These Damage Types tell totem what we should save the dying player form. In the above example a player won't be saved by the totem if they die to a zombie, but if they fall in lava and burn to death the totem will resurrect them!
+Damage types are minecraft's internal way of knowing what type of damage was inflicted upon an entity. You can see a full list of these on the [Minecraft Wiki](https://minecraft.wiki/w/Damage_types). These Damage Types tell totem what we should save the dying player form. In the above example a player won't be saved by the totem if they die to a zombie, but if they fall in lava and burn to death the totem will resurrect them!
 
 ### Given Effects
 
@@ -76,17 +102,17 @@ The type is the type of potion effect to be applied. What potion types and what 
 The duration is how long the effect lasts for
 
 :::warning
-The duration is in TICKS not seconds or miliseconds. there are 20 ticks in a second!!!
+The duration is in TICKS not seconds or milliseconds. there are 20 ticks in a second!!!
 :::
 :::info
-While there is a defuault duration of 0 it is reommend you always fill out this field
+While there is a default duration of 0 it is recommend you always fill out this field
 :::
 
 #### Amplifier
 
 The amplifier is the level of the potion e.g. Strength 2 has an amplifier of 1 and Strength 1 has an amplifier of 0. If this field is not filled out the amplifier defaults to 0 which gives a potion effect level of 1
 :::warning
-The "amplifier" starts at 0 instead of 1. E.g. a potoin with amplifier of 0 is level 1 and a potion with amplifier of 1 is 2 and so on
+The "amplifier" starts at 0 instead of 1. E.g. a potion with amplifier of 0 is level 1 and a potion with amplifier of 1 is 2 and so on
 :::
 
 #### Ambience
@@ -100,15 +126,12 @@ This field determines whether or not to show particles of the potion effect by d
 #### Icon
 
 According to the spigot documentation icon determines "whether an effect has an icon or not" by default this setting is true
-:::danger
-This feature was not rigerously tested if unexpected issues occur while using please contact support!
-:::
 
 ### Standard Effects
 
 Standard effects describe the effects a totem usually gives you on revival. By default this is true.
 :::info
-Standard effects are applied on top of the potoin effects that you add to these totem settings
+Standard effects are applied on top of the potion effects that you add to these totem settings
 :::
 
 ### Play Particles
@@ -141,7 +164,7 @@ The next most important thing when considering totems is how they look. For this
 Unlike before the ID in totem items has a much more important meaning than an internal redirection so avoiding collisions in ID names are very important here. in this case totem_of_fire is the name of the item when using the `/totem give` command as well as the identifier added to specific totems. Messing with these IDs when totems are on your server will cause issues. In such a cases these special totems will then revert to being regular totems of undying
 
 :::danger
-Chaing IDs when totems are already distributed within your playerbase may cause irreversable damage!
+Changing IDs when totems are already distributed within your player-base may cause irreversible damage!
 :::
 
 ### Settings
@@ -213,7 +236,7 @@ The recipe_type field is a required field which tells the code what type of reci
 
 ### Result
 
-The result is the id of the totem item. No other items can be accepted. Only totem items will work. You can refer to the [Totem Items](#totem-items--totem-itemsjson) section for more information on totem items
+The result is the id of the totem item. No other items can be accepted. Only totem items will work. You can refer to the [Totem Items](#totem-items--totem-items.json) section for more information on totem items
 
 ### Shaped
 
@@ -261,7 +284,7 @@ as you see the empty spaces are filled with `" "` space characters if you do not
 ingredients is the list of Materials/ItemStacks that map to a given to fill the shape. If an ingredient is not in the shape or the shape does not specify an ingredient
 an error will occur.
 
-Currently Item Types or "Materials" are preferred over item stack delcerations as they are more stable. If you have any questions regarding ItemStack declreations
+Currently Item Types or "Materials" are preferred over item stack declarations as they are more stable. If you have any questions regarding ItemStack decelerations
 or support for other plugins items please contact us in our support server
 
 ### Shapeless
@@ -283,4 +306,4 @@ or support for other plugins items please contact us in our support server
 #### Ingredients
 
 Unlike with shaped recipes shapeless recipes are a list versus a mapping as before while both ItemStacks and Item Types are supported Item Types are preferred currently
-for stabability reasons.
+for stability reasons.
