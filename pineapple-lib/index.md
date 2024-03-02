@@ -28,10 +28,7 @@ repositories {
 
 ```kotlin tab={"label":"Gradle (Kotlin)"}
 repositories {
-    maven {
-        name = "Miles Repository"
-        url = uri("https://maven.miles.sh/libraries")
-    }
+    maven("https://maven.miles.sh/libraries")
 }
 ```
 

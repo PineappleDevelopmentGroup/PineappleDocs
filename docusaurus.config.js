@@ -99,6 +99,28 @@ const config = {
         ...remarkPluginsConfig
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs', 
+      {
+        id: 'pineapple-plugins',
+        path: 'pineapple-plugins',
+        routeBasePath: 'pineapple-plugins',
+        sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
+        editUrl: "https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master",
+        ...remarkPluginsConfig
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs', 
+      {
+        id: 'pineapple-guides',
+        path: 'pineapple-guides',
+        routeBasePath: 'pineapple-guides',
+        sidebarPath: require.resolve('./sidebars/pineapplesidebar.js'),
+        editUrl: "https://github.com/PineappleDevelopmentGroup/PineappleDocs/tree/master",
+        ...remarkPluginsConfig
+      },
+    ],
   ],
 
   themeConfig:
@@ -120,14 +142,36 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'libraries/index',
             position: 'left',
-            label: 'Libraries',
+            docId: 'index',
+            docsPluginId: 'pineapple-lib',
+            label: 'Pineapple Lib',
+          },
+          {
+            type: 'doc',
+            position: 'left',
+            docId: 'index',
+            docsPluginId: 'pineapple-chat',
+            label: 'Pineapple Chat',
           },
           {
             type: "docsVersionDropdown",
             position: "right",
             docsPluginId: 'pineapple-lib',
+          },
+          {
+            type: 'doc',
+            position: 'left',
+            docId: 'index',
+            docsPluginId: 'pineapple-plugins',
+            label: 'Plugins',
+          },
+          {
+            type: 'doc',
+            position: 'left',
+            docId: 'index',
+            docsPluginId: 'pineapple-guides',
+            label: 'Dev Guides',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
