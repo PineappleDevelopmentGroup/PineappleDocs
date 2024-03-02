@@ -38,7 +38,7 @@ dependencies {
 
 ## Use
 
-To get started with the legacy adapter please inspect which version of the game you are on. For versions 1.16.2 and greater hexadecimal color is supported by Mojang within text componets meaning legacy format is able to properly parse into custom hexadecimal colors with the legacy format.
+To get started with the legacy adapter please inspect which version of the game you are on. For versions 1.16.2 and greater hexadecimal color is supported by Mojang within text components meaning legacy format is able to properly parse into custom hexadecimal colors with the legacy format.
 
 To use PineappleChat you must initialize the parser context
 

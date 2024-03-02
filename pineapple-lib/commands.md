@@ -10,9 +10,9 @@ You need to initialize PineappleLib with `PineappleLib.initialize(Plugin)` befor
 
 ## The Command Registry
 
-The first important differenciation between Bukkit's command API and Pineapple's is registration. While the commands themselves have a similar layout and structure you can't use Bukkit's normal JavaPlugin#getCommand to work with Pineapple Command's.
+The first important differentiation between Bukkit's command API and Pineapple's is registration. While the commands themselves have a similar layout and structure you can't use Bukkit's normal JavaPlugin#getCommand to work with Pineapple Command's.
 
-Pineapple solves the often annoying and forgetful task of command registration not through a plugin's `plugin.yml` file rather through code. An easier and less forgetable way to ensure your commands work when you go to test them in game.
+Pineapple solves the often annoying and forgetful task of command registration not through a plugin's `plugin.yml` file rather through code. An easier and less forgettable way to ensure your commands work when you go to test them in game.
 
 The CommandRegistry class can be either retrieved from PineappleLib like so `CommandRegistry commandRegistry =  PineappleLib.getCommandRegistry();` or alternatively you can make the class yourself. `CommandRegistry commandRegistry = new CommandRegistry();`. It is important to note that not using PineappleLib's built in CommandRegistry has no benefits unless you plan to not initialize the PineappleLib class.
 
@@ -26,7 +26,7 @@ Pineapple track's the details of a command through the [CommandLabel](https://ma
 
 ### The CommandSettings?
 
-PineappleChat unlike bukkit is able to provide default messages and logic for common cases. You can provide these settings to any command and Pineapple also provides some default settings for you already so you don't need to fill them out if you'd prefer to not use them. While not fully fleshed out currently these settings could see more use later so keep up to date in later releases of Pineapple to see if anything has changed. Currently the only setting of importance is the CommandSetting.Settingss#sendPermissionMessage() you can set this by using the CommandSettings class.
+PineappleChat unlike Bukkit is able to provide default messages and logic for common cases. You can provide these settings to any command and Pineapple also provides some default settings for you already so you don't need to fill them out if you'd prefer to not use them. While not fully fleshed out currently these settings could see more use later so keep up to date in later releases of Pineapple to see if anything has changed. Currently the only setting of importance is the CommandSetting.Settings#sendPermissionMessage() you can set this by using the CommandSettings class.
 
 ### The Implementation
 
@@ -54,7 +54,8 @@ public class EchoCommand extends Command {
 
 ### Basic Sub Commands
 
-Subcommands are very easy to implement in Pineapple and they are implemented the exact same way as normal commands! Its easy and memorable. I will setup a basic test command that just says hello or hi based on which subcommand you execute.
+Subcommands are very easy to implement in Pineapple and they are implemented the exact same way as normal commands! Its easy and memorable. 
+I will setup a basic test command that just says hello or hi based on which subcommand you execute.
 
 ```java
 public class GreetingCommand extends Command {
@@ -62,17 +63,17 @@ public class GreetingCommand extends Command {
     public GreetingCommand() {
         super(new CommandLabel("greeting", "greeting.command"));
         super.noArgExecutor = (sender, args) -> sender.sendMessage("please provide arguments");
-        registerSubCommand(new FirstGreeingSubCommand());
-        registerSubCommand(new SecondGreeingSubCommand());
+        registerSubCommand(new FirstGreetingSubCommand());
+        registerSubCommand(new SecondGreetingSubCommand());
     }
     
 }
 ```
 
 ```java
-public class FirstGreeingSubCommand extends Command {
+public class FirstGreetingSubCommand extends Command {
 
-    public FirstGreeingSubCommand() {
+    public FirstGreetingSubCommand() {
         super(new CommandLabel("first", "greeting.command"))
     }
 
@@ -85,9 +86,9 @@ public class FirstGreeingSubCommand extends Command {
 ```
 
 ```java
-public class SecondGreeingSubCommand extends Command {
+public class SecondGreetingSubCommand extends Command {
 
-    public SecondGreeingSubCommand() {
+    public SecondGreetingSubCommand() {
         super(new CommandLabel("second", "greeting.command"))
     }
 

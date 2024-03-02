@@ -107,10 +107,20 @@ shadowJar {
 }
 ```
 
-## Initalizing  
+## Initializing    
 
 PineappleLib requires a plugin instance to function properly, to give it to Pineapple please add the following code to `onEnable()` or `onLoad()`
 
 ```java
-PineappleLib.initalize(this)
+PineappleLib.initialize(this)
 ```
+
+While by default PineappleLib requires the use of NMS you can disable it before initialization
+
+```java
+PineappleLib.initialize(this, false) // false disables NMS
+```
+
+:::danger
+While disabling NMS is a supported feature not all NMS features have appropriate backups. Avoid NMS tags when disabling NMS
+:::
