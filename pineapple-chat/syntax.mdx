@@ -9,7 +9,7 @@ PineappleChat is a simple markup language currently exclusive to minecraft text.
 
 ## The Premise
 
-PineappleChat allows for decleration of tags within strings. These tags can be parsed into different outputs depending on the platform!
+PineappleChat allows for declaration of tags within strings. These tags can be parsed into different outputs depending on the platform!
 
 Here is an example of a basic string with some tags
 
@@ -17,7 +17,7 @@ Here is an example of a basic string with some tags
 Hello the text is now <red>red</red> or maybe it's <blue>blue</blue>
 ```
 
-In the example above you can see two types of tags the opening tag `<red>` and closing tag `</red>` closing tags can be destinguished
+In the example above you can see two types of tags the opening tag `<red>` and closing tag `</red>` closing tags can be distinguished
 from opening tags because they are lead by a `/` where as opening tags are not.
 
 If you want to include tag literals in your string it is still easy to do so, with PineappleChat escaping tags is easy to do
@@ -30,15 +30,15 @@ The result of the tag above when run through a parse leaves the `<red>` in the s
 
 ## Tags
 
-PineappleChat composes its parts into tags. Some platforms may have specific tags that are only avaliable on that platform, but this page will go over every tag avaliable to every module.
-While PineappleChat does provide many defaults, it is also possible some platforms may not beable to fulfill their requirements notably the minecraft-legacy module falls shorts with many basic features.
+PineappleChat composes its parts into tags. Some platforms may have specific tags that are only available on that platform, but this page will go over every tag available to every module.
+While PineappleChat does provide many defaults, it is also possible some platforms may not be-able to fulfill their requirements notably the minecraft-legacy module falls shorts with many basic features.
 
 ### Color Tag
 
 The Color Tag can be represented like `<color:_color_>`. Not every color tag must be prefixed with `color:`. Named Colors can simply be input into an empty tag shell like `<_color>`.
 
 :::info
-Named Colors are simply a construct made by mojang. They are less prevelent outside of the legacy module, however they can still be leveraged. You can find a list of named colors [here](https://minecraft.wiki/w/Formatting_codes)
+Named Colors are simply a construct made by mojang. They are less prevalent outside of the legacy module, however they can still be leveraged. You can find a list of named colors [here](https://minecraft.wiki/w/Formatting_codes)
 :::
 
 ### Decoration Tag

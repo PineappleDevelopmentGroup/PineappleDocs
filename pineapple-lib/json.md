@@ -34,7 +34,7 @@ public final class UUIDAdapter implements JsonAdapter<UUID> {
 }
 ```
 
-If you want to understand more indepth about what each method does you can read up on the adapter methods on the [JsonAdapter](https://maven.miles.sh/javadoc/libraries/sh/miles/Pineapple/1.0.0-SNAPSHOT/raw/sh/miles/pineapple/json/JsonAdapter.html) java doc.
+If you want to understand more in-depth about what each method does you can read up on the adapter methods on the [JsonAdapter](https://maven.miles.sh/javadoc/libraries/sh/miles/Pineapple/1.0.0-SNAPSHOT/raw/sh/miles/pineapple/json/JsonAdapter.html) java doc.
 
 ## Default Adapters
 
@@ -50,4 +50,4 @@ final JsonHelper jsonHelper = new JsonHelper();
 final Gson gson = jsonHelper.getGson();
 ```
 
-You can find the docs for JsonHelper on the Pineapple javadocs.
+You can find the docs for JsonHelper on the Pineapple java docs.

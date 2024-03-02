@@ -14,7 +14,7 @@ All the annotations PineappleLib provides for your configs
 
 ### @ConfigPath
 
-This annoation is the only annotation required for your configs to work, it registeres a variable as a config entry and allows you to set the path of it inside of your YAML file.
+This annotation is the only annotation required for your configs to work, it registries a variable as a config entry and allows you to set the path of it inside of your YAML file.
 Example:
 
 #### Parent Section

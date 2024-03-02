@@ -3,5 +3,9 @@
         {
             "path": "[[workspace]]/pineapple-lib"
         }
-    ]
+    ],
+    "cSpell.enableFiletypes": [
+        "markdown_latex_combined"
+    ],
+    "cSpell.enabled": true
 }
